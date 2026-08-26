@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>About</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./images/favicon_io/site.webmanifest" />
+  </head>
+  <body>
+    <!---Navigation-->
+<nav class="custom-navbar"></nav>
+    <!--End Navigation-->
+
+    <!-- Sidebar Nav -->
+    <div id="navSidebar" class="nav-sidebar">
+      <div class="nav-header">
+        <span id="closeNav" class="close-nav">&times;</span>
+      </div>
+      <div class="nav-body">
+        <ul class="sidebar-menu">
+          <li><a href="index.html">Home</a></li>
+          <hr />
+          <li><a href="about.html">About</a></li>
+          <hr />
+          <li><a href="products.html">Products</a></li>
+          <hr />
+          <li><a href="contact.html">Contact</a></li>
+          <hr />
+        </ul>
+      </div>
+    </div>
+
+    <!--Hero-->
+    <div class="header">
+      <div class="header-hero">
+        <div class="overlay">
+          <div class="header-content">
+            <h1 class="slide-in">About Us</h1>
+            <h4 class="slide-in">
+              <span>
+                <a href="index.html" class="breadcrumb-link">Home</a>
+              </span>
+              / About Us
+            </h4>
+          </div>
+        </div>
+      </div>
+      <div class="header-img-page">
+        <img src="./assets/images/hero-page.png" alt="" srcset="" />
+      </div>
+    </div>
+    <!--End Hero-->
+
+    <!--About-->
+    <section id="about-lengkap">
+      <div>
+        <div class="arch-image-border">
+            <div class="arch-image-inner">
+              <img src="./assets/images/tentang-peternak-1.png" alt="peternak mitra" />
+            </div>
+        </div>
+        <div class="col slide-in-right-hidden">
+          <h2>Tentang Eggora</h2>
+          <p>
+            Eggora adalah ekosistem web terintegrasi untuk rantai pasok pangan
+            lokal berkelanjutan. Kami menghubungkan peternak mitra, konsumen,
+            dan verifier dalam satu portal <strong>Green Supply Chain</strong>
+            yang didukung IoT, Big Data, dan kolaborasi manusia–mesin
+            sejalan dengan tema <em>Synergizing Intelligence: Developing
+            Integrated Web Ecosystems for Sustainable Global Impact</em>.
+          </p>
+          <p>
+            Melalui transparansi jejak karbon, kepatuhan ESG, kolaborasi
+            digital (paperless), dan optimasi logistik, Eggora membuktikan
+            bagaimana teknologi cerdas dapat dikemas dalam solusi web yang
+            skalabel untuk mempercepat pencapaian target keberlanjutan dunia
+            (SDG 2, 12, & 13).
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="col slide-in-right-hidden">
+          <h2>Asal Usul &amp; Misi</h2>
+          <p>
+            Bermula dari kepedulian terhadap peternak ayam lokal di Sumatera
+            Selatan, Eggora hadir untuk memangkas rantai pasok konvensional yang
+            tidak transparan dan boros emisi. Kami percaya teknologi cerdas bukan
+            sekadar otomatisasi, melainkan katalis kolaborasi manusia–mesin
+            dalam menyelesaikan krisis iklim.
+          </p>
+          <p>
+            Misi kami: menjadikan setiap telur yang sampai ke meja konsumen
+            tercatat jejak keberlanjutannya dari pakan, energi kandang, air,
+            limbah, hingga rute pengiriman. Sehingga peternak mitra mendapat
+            apresiasi adil dan planet terlindungi.
+          </p>
+        </div>
+        <div class="arch-image-border">
+          <div class="arch-image-inner">
+            <img src="./assets/images/tentang-peternak-2.png" alt="peternak mitra" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End About-->
+
+    <!-- Sidebar Cart -->
+    <section>
+      <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+          <h3>Shopping Cart</h3>
+          <span class="close-cart">&times;</span>
+        </div>
+        <hr />
+        <div class="cart-body" id="cartItems"></div>
+        <!-- Tombol Checkout -->
+        <div class="cart-footer">
+          <hr />
+          <button id="checkoutBtn">Checkout</button>
+        </div>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="footer">
+ 
+    </footer>
+    <!--End Footer-->
+
+     <script src="./js/sidebar.js"></script>
+       <script type="module" src="./js/navbar.js"></script>
+  <script type="module" src="./js/footer.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const targets = document.querySelectorAll(".slide-in-right-hidden");
+
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("slide-in-right-show");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+          }
+        );
+
+        targets.forEach((target) => {
+          observer.observe(target);
+        });
+      });
+    </script>
+  </body>
+</html>
