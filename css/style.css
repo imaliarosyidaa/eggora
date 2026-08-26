@@ -1928,6 +1928,7 @@ strong {
 .bar-line { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: 12px; }
 .bar-tag { width: 54px; color: #666; }
 .mini-bar { flex: 1; height: 8px; background: #eee; border-radius: 6px; overflow: hidden; }
+.mini-fill { height: 100%; }
 .mini-fill.c { background: #66bb6a; }
 .mini-fill.e { background: #ffb300; }
 .mini-fill.w { background: #29b6f6; }
