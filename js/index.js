@@ -7,22 +7,26 @@ document.addEventListener("click", function (event) {
   if (event.target.closest(".visibility-btn")) {
     const btn = event.target.closest(".visibility-btn");
     const productCard = btn.closest(".product-card");
-    const img = productCard.querySelector(".product-img");
+    const img = productCard ? productCard.querySelector(".product-img") : null;
 
-    if (img) {
+    if (modal && modalImg && img) {
       modal.style.display = "block";
       modalImg.src = img.src;
     }
   }
 });
 
-closeBtn.onclick = function () {
-  modal.style.display = "none";
-};
+if (closeBtn && modal) {
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+}
 
-closeBtn.onclick = function () {
-  modal.style.display = "none";
-};
+if (modal) {
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) modal.style.display = "none";
+  });
+}
 
 // Add Favorite
 document.addEventListener("click", function (e) {
