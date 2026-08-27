@@ -402,12 +402,25 @@ header img {
 
 
 .hamburger-btn {
-    display: none;
+    display: block;
     background: none;
     border: none;
     cursor: pointer;
     color: #F5B800;
 }
+
+.mobile-header {
+    display: none;
+    position: absolute;
+    z-index: -10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: top;
+}
+
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
@@ -421,6 +434,24 @@ header img {
 
     .navbar-menu a {
         font-size: 0.9rem;
+        display: none;
+    }
+    .full-header{
+        display: none;
+    }
+    
+    .mobile-header {
+        display: flex;
+    }
+
+    .hero-title {
+        padding-top: 24px;
+        font-size: 40px;
+        width: 45%;
+    }
+
+    .hero-title::after {
+        top: 320px;
     }
 }
 
@@ -452,14 +483,6 @@ header img {
         padding: 1rem 1rem;
     }
 
-    .hamburger-btn {
-        display: block;
-    }
-
-    .navbar-menu {
-        display: none;
-    }
-
     header img {
         height: 60vh;
     }
@@ -469,18 +492,8 @@ header img {
         gap: 1rem;
         align-items: center;
     }
-}
+    
 
-.mobile-header {
-    display: none;
-    position: absolute;
-    z-index: -10;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    object-position: top;
 }
 
 @media (max-width: 480px) {
@@ -521,10 +534,6 @@ header img {
 
     header img {
         display: none;
-    }
-
-    .mobile-header {
-        display: flex;
     }
 
     h2,
@@ -1573,12 +1582,12 @@ hr {
     font-size: 24px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1199px) {
     .hamburger-btn {
         display: none;
-        /* Hide hamburger on large screens */
     }
 }
+/* End Sidebar Nav */
 
  /* Chatbot */
 .chatbot-container {
@@ -1722,13 +1731,29 @@ hr {
     background-color: #dfa800;
 }
 
+@media (max-width: 1024px) {
+    .chatbot-container {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        padding: 20px 20px 64px;
+
+        height: 100vh;
+    }
+}
+
 /* Tablet / Mobile */
 @media (max-width: 768px) {
-    .chatbot-container {
-        flex-direction: column;
-        gap: 20px;
-    }
 
+    .chatbot-container {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        padding: 20px 20px 64px;
+
+        height: 100vh;
+    }
+    
     .chatbot-container > div {
         flex: 1 1 100%;
     }
@@ -2949,6 +2974,12 @@ strong {
     grid-template-columns: 1fr 1fr;
 
     box-shadow: 0 20px 60px rgba(46, 125, 50, 0.12);
+}
+
+@media (max-width: 1024px) {
+    .auth-container{
+    grid-template-columns: auto 1fr;
+    }
 }
 
 .auth-image {
