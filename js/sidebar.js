@@ -19,6 +19,9 @@ function appendSideBar() {
         <hr />
                 <li><a href="favorit.html">Favorit</a></li>
         <hr />
+                <hr />
+                <li><a href="chatbot.html">Chatbot</a></li>
+        <hr />
         <li><a href="history.html">Riwayat Pembelian</a></li>
         <hr />
         <li><a href="checkout.html">Keranjang</a></li>

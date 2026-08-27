@@ -27,6 +27,7 @@ function appendNavbar() {
           <li><a href="about.html">About</a></li>
           <li><a href="products.html">Products</a></li>
           <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="chatbot.html">Chatbot</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="navbar-icons">
