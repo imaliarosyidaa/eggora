@@ -123,6 +123,7 @@ header .title {
     color: #FFFFFF;
     border-radius: 4px;
     padding: 16px;
+    padding-left: 16px;
     cursor: pointer;
 }
 
@@ -435,7 +436,7 @@ header img {
         border: solid 1px;
         border-radius: 4px;
         font-size: 16px;
-        padding: 6px;
+        padding: 16px;
         cursor: pointer;
     }
 
@@ -633,8 +634,12 @@ p {
 
     #about>div {
         grid-template-columns: 1fr;
-        padding: 270px 0;
+        padding: 270px 0 92px;
     }
+
+    #about p{
+    padding-top: 32px;
+}
 
 
     .blue-ractangle {
@@ -823,6 +828,7 @@ p {
     }
 
     .arch-image-border {
+        margin-top: 36px;
         width: 50px;
         height: 300px;
         display: flex;
@@ -875,7 +881,7 @@ p {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
-    padding: 24px 0px 36px;
+    padding: 24px 24px 36px;
 }
 
 .product-card {
@@ -1769,7 +1775,6 @@ h2 {
 
 #about2 {
     background-image: url('../assets/images/yellow-line.jpg');
-
     background-size: auto 750px;
     background-repeat: no-repeat;
     background-position: center;
@@ -1818,6 +1823,10 @@ h2 {
         position: relative;
         bottom: 120px;
     }
+
+    #about2 {
+    background-image: none;
+}
 
     .image-frame img {
         max-width: 80%;
@@ -2069,6 +2078,9 @@ strong {
         font-size: 12px;
         max-width: 220px;
     }
+    #portal {
+    padding: 0px 20px;
+}
 }
 
 /* Dashboard */
