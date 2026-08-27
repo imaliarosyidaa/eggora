@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Detail Produk - Eggora</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon_io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon_io/favicon-16x16.png" />
+  <link rel="manifest" href="./assets/images/favicon_io/site.webmanifest" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="custom-navbar"></nav>
+
+  <!-- Sidebar Nav -->
+  <div id="navSidebar" class="nav-sidebar"></div>
+
+  <!--Hero-->
+  <div class="header">
+    <div class="header-hero">
+      <div class="overlay">
+        <div class="header-content">
+          <h1 class="slide-in">Detail Produk</h1>
+          <h4 class="slide-in">
+            <span>
+              <a href="index.html" class="breadcrumb-link">Home</a>
+            </span>
+            / <a href="products.html" class="breadcrumb-link">Produk</a> /
+            <span id="breadcrumbName">-</span>
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div class="header-img-page">
+      <img src="./assets/images/hero-page.png" alt="" srcset="" />
+    </div>
+  </div>
+  <!--End Hero-->
+
+  <!-- Detail Produk -->
+  <section class="detail-section">
+    <div class="detail-container" id="detailContainer">
+      <!-- Kolom kiri -->
+      <div class="detail-left">
+        <div class="detail-main-img">
+          <img id="mainImage" src="" alt="Produk" />
+        </div>
+        <div class="detail-thumbs" id="thumbs"></div>
+      </div>
+
+      <!-- Kolom kanan -->
+      <div class="detail-right">
+        <h1 id="pName">Memuat...</h1>
+
+        <div class="detail-rating">
+          <span class="stars" id="pStars">★★★★★</span>
+          <span id="pRating">-</span>
+          <span>•</span>
+          <span id="pSold">-</span>
+          <span>terjual</span>
+        </div>
+
+        <div class="detail-price" id="pPrice">-</div>
+
+        <p class="detail-short" id="pDesc"></p>
+
+        <div class="detail-stock" id="pStock"></div>
+
+        <div class="detail-label">Varian Kemasan</div>
+        <div class="detail-variants" id="pVariants"></div>
+
+        <div class="detail-label">Jumlah</div>
+        <div class="detail-qty">
+          <button type="button" id="qtyMinus" aria-label="Kurangi">−</button>
+          <input type="text" id="qtyInput" value="1" inputmode="numeric" />
+          <button type="button" id="qtyPlus" aria-label="Tambah">+</button>
+        </div>
+
+        <div class="detail-actions">
+          <button class="place-order-btn" id="addCartBtn">
+            Tambah ke Keranjang
+          </button>
+          <button class="confirm-pay-btn" id="buyNowBtn">Beli Sekarang</button>
+        </div>
+
+        <div class="detail-feedback" id="feedback"></div>
+      </div>
+    </div>
+
+    <!-- Tabs informasi -->
+    <div class="detail-tabs">
+      <div class="tab-head" id="tabHead">
+        <button class="tab-btn active" data-tab="desc">Deskripsi Produk</button>
+        <button class="tab-btn" data-tab="detail">Detail Produk</button>
+        <button class="tab-btn" data-tab="supplier">
+          Peternakan / Supplier
+        </button>
+        <button class="tab-btn" data-tab="ship">Pengiriman</button>
+        <button class="tab-btn" data-tab="quality">Kualitas Produk</button>
+      </div>
+      <div class="tab-body">
+        <div class="tab-panel active" id="tab-desc"></div>
+        <div class="tab-panel" id="tab-detail"></div>
+        <div class="tab-panel" id="tab-supplier"></div>
+        <div class="tab-panel" id="tab-ship"></div>
+        <div class="tab-panel" id="tab-quality"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky action bar (mobile) -->
+  <div class="mobile-action-bar">
+    <button class="place-order-btn" id="addCartBtnMobile">
+      + Keranjang
+    </button>
+    <button class="confirm-pay-btn" id="buyNowBtnMobile">Beli Sekarang</button>
+  </div>
+
+  <!-- Sidebar Cart -->
+  <section>
+    <div id="cartSidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h3>Shopping Cart</h3>
+        <span class="close-cart">&times;</span>
+      </div>
+      <hr />
+      <div class="cart-body" id="cartItems"></div>
+      <!-- Tombol Checkout -->
+      <div class="cart-footer">
+        <hr />
+        <button id="checkoutBtn">Checkout</button>
+      </div>
+    </div>
+  </section>
+
+  <!--Footer-->
+  <footer class="footer"></footer>
+
+  <script src="./lib/jquery-3.7.1.min.js"></script>
+  <script src="./js/cart.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/sidebar.js"></script>
+  <script type="module" src="./js/navbar.js"></script>
+  <script type="module" src="./js/footer.js"></script>
+  <script type="module" src="./js/product.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>

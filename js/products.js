@@ -3,6 +3,13 @@ import filter from '../assets/data/filter.json' with {type: 'json'}
 
 const grid = document.getElementById('productGrid');
 
+grid.addEventListener('click', (e) => {
+  if (e.target.closest('.icons')) return;
+  const card = e.target.closest('.product-card');
+  if (!card || !card.dataset.id) return;
+  window.location.href = 'product.html?id=' + card.dataset.id;
+});
+
 function appendFilters() {
   const html = filter.map(p => `
     <label
@@ -31,6 +38,7 @@ function renderProducts(filtered) {
   listToRender.forEach(p => {
     const card = document.createElement('div');
     card.className = 'product-card';
+    card.dataset.id = p.id;
     card.innerHTML = `
     <div class="product-image">
             <img
