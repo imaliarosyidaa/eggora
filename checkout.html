@@ -224,13 +224,39 @@
               <h2>Your order</h2>
               <div class="order-summary" id="orderSummary"></div>
 
-              <div class="payment-warning">
-                Sorry, it seems that there are no available payment methods.
-                Please contact us if you require assistance or wish to make
-                alternate arrangements.
-              </div>
+              <div class="payment-section">
+                <h3>Metode Pembayaran</h3>
+                <div class="payment-methods" id="paymentMethods"></div>
 
-              <button class="place-order-btn">Place order</button>
+                <div class="payment-instruction" id="paymentInstruction" hidden>
+                  <h4>Instruksi Pembayaran</h4>
+                  <p>Silakan transfer sesuai detail di bawah ini:</p>
+                  <ul class="payment-detail">
+                    <li><span>Metode</span><strong id="pmMethod">-</strong></li>
+                    <li><span>No. Rekening / Akun</span><strong id="pmAccount">-</strong></li>
+                    <li><span>Total Tagihan</span><strong id="pmAmount">-</strong></li>
+                    <li><span>ID Pesanan</span><strong id="pmOrderId">-</strong></li>
+                  </ul>
+                  <p class="pm-note">
+                    Sertakan <strong>ID Pesanan</strong> pada berita transfer
+                    agar verifikasi lebih cepat.
+                  </p>
+                </div>
+
+                <div class="upload-proof" id="uploadProof" hidden>
+                  <label for="proofInput">Upload Bukti Transfer</label>
+                  <input type="file" id="proofInput" accept="image/*" />
+                  <img id="proofPreview" class="proof-preview" alt="Preview bukti" hidden />
+                </div>
+
+                <button class="place-order-btn" id="placeOrderBtn" disabled>
+                  Place order
+                </button>
+                <button class="confirm-pay-btn" id="confirmPayBtn" hidden>
+                  Konfirmasi Pembayaran
+                </button>
+                <p class="order-status" id="orderStatus"></p>
+              </div>
             </div>
           </div>
         </div>

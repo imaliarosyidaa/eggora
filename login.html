@@ -1,377 +1,50 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Login | Eggora</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            min-height: 100vh;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f7f9f3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 30px;
-        }
-
-        /* =========================
-           LOGIN CONTAINER
-        ========================= */
-
-        .login-container {
-            width: 100%;
-            max-width: 1050px;
-            min-height: 620px;
-
-            background: #ffffff;
-            border-radius: 28px;
-            overflow: hidden;
-
-            display: grid;
-            grid-template-columns: 1.05fr 0.95fr;
-
-            box-shadow:
-                0 20px 60px rgba(46, 125, 50, 0.12);
-        }
-
-
-        /* =========================
-           LEFT IMAGE
-        ========================= */
-
-        .login-image {
-            position: relative;
-            min-height: 620px;
-            background: #80c41c;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            overflow: hidden;
-        }
-
-        .login-image::before {
-            content: "";
-            position: absolute;
-
-            width: 420px;
-            height: 420px;
-
-            background: rgba(255, 255, 255, 0.08);
-
-            border-radius: 48% 52% 60% 40% / 45% 40% 60% 55%;
-
-            top: -100px;
-            left: -120px;
-        }
-
-        .login-image::after {
-            content: "";
-            position: absolute;
-
-            width: 350px;
-            height: 350px;
-
-            background: rgba(255, 193, 7, 0.12);
-
-            border-radius: 60% 40% 45% 55%;
-
-            bottom: -150px;
-            right: -100px;
-        }
-
-        .login-image img {
-            position: relative;
-            z-index: 2;
-
-            width: 100%;
-            max-width: 520px;
-            height: auto;
-
-            display: block;
-            object-fit: contain;
-        }
-
-
-        /* =========================
-           RIGHT FORM
-        ========================= */
-
-        .login-form {
-            padding: 70px 65px;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .brand {
-            margin-bottom: 45px;
-        }
-
-        .brand h1 {
-            color: #80c41c;
-            font-size: 34px;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 8px;
-        }
-
-        .brand p {
-            color: #777;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-
-        /* =========================
-           FORM
-        ========================= */
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-
-            color: #333;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .form-group input {
-            width: 100%;
-            height: 52px;
-
-            padding: 0 16px;
-
-            border: 1px solid #e1e5dc;
-            border-radius: 12px;
-
-            background: #fafcf8;
-
-            color: #333;
-            font-size: 14px;
-
-            outline: none;
-
-            transition: 0.2s ease;
-        }
-
-        .form-group input::placeholder {
-            color: #a5a5a5;
-        }
-
-        .form-group input:focus {
-            border-color: #80c41c;
-
-            background: #ffffff;
-
-            box-shadow:
-                0 0 0 3px rgba(128, 196, 28, 0.12);
-        }
-
-
-        /* =========================
-           OPTIONS
-        ========================= */
-
-        .form-options {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            margin: 5px 0 25px;
-        }
-
-        .remember {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-
-            color: #777;
-            font-size: 13px;
-        }
-
-        .remember input {
-            accent-color: #80c41c;
-        }
-
-        .forgot {
-            color: #6cab13;
-            font-size: 13px;
-            font-weight: 600;
-
-            text-decoration: none;
-        }
-
-        .forgot:hover {
-            text-decoration: underline;
-        }
-
-
-        /* =========================
-           LOGIN BUTTON
-        ========================= */
-
-        .login-button {
-            width: 100%;
-            height: 52px;
-
-            border: none;
-            border-radius: 12px;
-
-            background: #80c41c;
-            color: #ffffff;
-
-            font-size: 15px;
-            font-weight: 700;
-
-            cursor: pointer;
-
-            transition: 0.2s ease;
-        }
-
-        .login-button:hover {
-            background: #70ad17;
-
-            transform: translateY(-1px);
-
-            box-shadow:
-                0 8px 20px rgba(128, 196, 28, 0.25);
-        }
-
-
-        /* =========================
-           REGISTER
-        ========================= */
-
-        .register {
-            text-align: center;
-            margin-top: 28px;
-
-            color: #888;
-            font-size: 13px;
-        }
-
-        .register a {
-            color: #6cab13;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .register a:hover {
-            text-decoration: underline;
-        }
-
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media (max-width: 800px) {
-
-            body {
-                padding: 20px;
-            }
-
-            .login-container {
-                grid-template-columns: 1fr;
-                max-width: 520px;
-            }
-
-            .login-image {
-                min-height: 280px;
-            }
-
-            .login-image img {
-                max-width: 380px;
-            }
-
-            .login-form {
-                padding: 45px 35px;
-            }
-        }
-
-
-        @media (max-width: 480px) {
-
-            body {
-                padding: 12px;
-            }
-
-            .login-container {
-                border-radius: 20px;
-            }
-
-            .login-image {
-                min-height: 220px;
-            }
-
-            .login-image img {
-                max-width: 300px;
-            }
-
-            .login-form {
-                padding: 35px 25px;
-            }
-
-            .brand {
-                margin-bottom: 30px;
-            }
-
-            .brand h1 {
-                font-size: 28px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <main class="login-container">
-
-        <!-- LEFT -->
-        <section class="login-image">
-            <img
-                src="./assets/images/login-background.png"
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./images/favicon_io/site.webmanifest" />
+  </head>
+  <body>
+    <main class="auth-container">
+        <div class="auth-form">
+            <a href="index.html">
+                        <img
+                src="./assets/images/eggora-logo.png"
                 alt="Eggora"
             >
-        </section>
-
-
-        <!-- RIGHT -->
-        <section class="login-form">
-
+            </a>
             <div class="brand">
                 <h1>Welcome to Eggora</h1>
-
                 <p>
                     Masuk untuk melanjutkan ke ekosistem
                     peternakan dan supply chain Eggora.
                 </p>
             </div>
-
-
             <form action="/action_page.php" method="POST">
-
                 <div class="form-group">
                     <label for="username">
                         Username
                     </label>
-
                     <input
                         type="text"
                         id="username"
@@ -381,13 +54,10 @@
                         required
                     >
                 </div>
-
-
                 <div class="form-group">
                     <label for="password">
                         Password
                     </label>
-
                     <input
                         type="password"
                         id="password"
@@ -397,19 +67,14 @@
                         required
                     >
                 </div>
-
-
                 <div class="form-options">
-
-                    <label class="remember">
+                    <label class="options">
                         <input
                             type="checkbox"
                             name="remember"
                         >
-
                         <span>Ingat saya</span>
                     </label>
-
                     <a
                         href="#"
                         class="forgot"
@@ -418,28 +83,26 @@
                     </a>
 
                 </div>
-
-
                 <button
                     type="submit"
-                    class="login-button"
+                    class="auth-button"
                 >
                     Login
                 </button>
-
             </form>
-
-
             <div class="register">
                 Belum punya akun?
                 <a href="register.html">
                     Daftar sekarang
                 </a>
             </div>
-
-        </section>
-
+        </div>
+        <div class="auth-image">
+            <img
+                src="./assets/images/login-background.png"
+                alt="Eggora"
+            >
+        </div>
     </main>
-
 </body>
 </html>
